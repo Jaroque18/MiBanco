@@ -18,62 +18,94 @@
             crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
         <style>
-            .form-group {
+            .con {
+                border: 2px dashed #ccc;
+                padding: 20px;
                 text-align: center;
+                margin: 0 auto;
+                width: 80%;
+                border: 2px dotted #f58809; /* Color del borde */
+            }
+
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 10px 0;
+            }
+
+            .form-label {
                 margin-bottom: 5px;
             }
 
-                .form-group input[type="text"],
-                .form-group input[type="password"] {
-                    margin: 0 auto;
-                    display: block;
+            .form-control {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+
+            .inputfile {
+                display: none;
+            }
+
+            /* Estilos para el contenedor personalizado */
+            .custom-file-upload {
+                position: relative;
+            }
+
+                /* Estilos para el botón personalizado */
+                .custom-file-upload label {
+                    background-color: #7AB730;
+                    color: #fff;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
                 }
+
+            /* Estilos para el texto del nombre del archivo seleccionado */
+            #selectedFileName {
+                margin-top: 5px;
+                display: block;
+                font-style: italic;
+            }
+
+            body {
+                background-color: #f9f9f9;
+            }
         </style>
-        <section class="form-01-main">
-            <div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-sub-main">
-                                <div class="custom-SobreNosotros text-center">
-                                    <h2 style="color: black;">Bienvenido</h2>
-                                    <hr class="divider" />
-                                    <!--<img src="img/logo.PNG" />-->
-                                </div>
-                                <div>
-                                    <p class="text-center" style="color: black;">Ingrese los Datos</p>
-                                </div>
-                                <div class="form-group">
-                                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control _ge_de_ol" placeholder="Ingrese su Correo" Required="true"></asp:TextBox>
-                                </div>
-                                <div class="form-group">
-                                    <asp:TextBox ID="txtContrasena" runat="server" TextMode="Password" CssClass="form-control" placeholder="Contraseña" Required="true"></asp:TextBox>
-                                </div>
-                                <div class="form-group">
-                                    <div class="text-center">
-                                        <p style="color: black;">
-                                            ¿No Tiene Cuenta? <a style="color: blue;" href="crearcuenta.aspx">Crear Una</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="form-group text-center">
-                                    <div class="btn_uy">
-                                        <asp:Button ID="btnIngresar" runat="server" CssClass="btn btn-primary" Text="Ingresar" />
-                                    </div>
-                                </div>
-                                <div class="form-group text-center">
-                                    <asp:Label ID="lblRol" runat="server" AssociatedControlID="ddlRol" CssClass="form-label">Rol</asp:Label>
-                                    <asp:DropDownList ID="ddlRol" runat="server" CssClass="form-select" aria-label="Default select example">
-                                        <asp:ListItem Value="Anfitrión">Anfitrión</asp:ListItem>
-                                        <asp:ListItem Value="Huésped">Huésped</asp:ListItem>
-                                    </asp:DropDownList>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="container">
+            <div class="row col-lg-12 col-sm-12 text-center">
+                <h1 style="color: #f58809;">&nbsp;&nbsp;Iniciar Sesión</h1>
             </div>
-        </section>
+        </div>
+        <div class="con">
+
+
+            <div class="col-sm-12 col-lg-12 mt-2 form-group">
+
+                <asp:Label ID="lblCorreo" runat="server" AssociatedControlID="txtcorreo" CssClass="form-label">Correo Electrónico</asp:Label>
+                <asp:TextBox ID="txtCorreo" runat="server" CssClass="form-control" autocomplete="off"></asp:TextBox>
+            </div>
+
+            <div class="col-sm-12 col-lg-12 mt-2 form-group">
+
+                <asp:Label ID="lblContrasena" runat="server" AssociatedControlID="txtcontrasena" CssClass="form-label">Contraseña</asp:Label>
+                <asp:TextBox ID="txtcontrasena" runat="server" TextMode="Password" CssClass="form-control" autocomplete="off"></asp:TextBox>
+            </div>
+
+
+            <div class="col-sm-12 col-lg-12 mt-2 form-group">
+                <asp:Button ID="btnIniciarSesion" runat="server" Text="Iniciar Sesión" CssClass="btn btn-primary btn-block"
+                    Style="height: 44px; margin-top: -2px; background: #f58809; border-color: #f58809;"  />
+            </div>
+
+            <div class="col-sm-12 col-lg-12 mt-2 form-group">
+                <a href="pages/registrarse.aspx" class="btn btn-primary btn-block"
+                    style="height: 44px; margin-top: -2px; background: #f58809; border-color: #f58809;">Crear Cuenta
+                </a>
+            </div>
+        </div>
 
 
 

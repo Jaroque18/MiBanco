@@ -5,7 +5,7 @@
     <div class="d-flex align-items-center justify-content-center" style="min-height: 20rem;">
         
             <div class="col-lg-6 col-md-12 col-sm-12">
-                <h1 style="color: blue; margin-bottom: 5px;">Sus transacciones</h1>
+                <h1 style="color: #f58809; margin-bottom: 5px;">Sus transacciones</h1>
                 <div class="row">
                     <div class="table-responsive">
                         <table class="table">
@@ -31,7 +31,7 @@
 
                 <div class="row">
                     <div class="col-lg-5 col-md-12 col-sm-12">
-                    <button class="btn btn-primary" style="background-color: blue;">Regresar</button>
+                    <button class="btn btn-primary" style="background-color: #1a2954; border-color: #1a2954;">Regresar</button>
                 </div>
                 </div>
             </div> 

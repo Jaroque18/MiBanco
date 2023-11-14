@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script>
         function validarContrasena() {
-            const contrasenaInput = document.getElementById('<%= txtcontrasena.ClientID %>');
+            const contrasenaInput = document.getElementById('<%= txtcontrasenaCrear.ClientID %>');
             if (contrasenaInput) {
                 const contrasena = contrasenaInput.value;
                 const longitudValida = contrasena.length >= 10;
@@ -34,7 +34,7 @@
 
 
                 // Habilitar o deshabilitar el botón de envío
-                const botonEnvio = document.getElementById('<%= btnRegistrar.ClientID %>');
+                const botonEnvio = document.getElementById('<%= btnCrearCuenta.ClientID %>');
                 botonEnvio.disabled = !(longitudValida && contieneMayuscula && contieneNumero && noConsecutivos);
             }
         }
@@ -53,50 +53,118 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-    <link rel="stylesheet" href="../Content/loginstyle.css">
+ <%--   <link rel="stylesheet" href="../Content/loginstyle.css">--%>
+
+    <style>
+        .con {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            margin: 0 auto;
+            width: 80%;
+            border: 2px dotted  #f58809; /* Color del borde */
+        }
 
 
-    <div class="container d-flex align-items-center justify-content-center">
-        <div class="row">
-            <h1 class="display-6 text-center">Crear Cuenta</h1>
-            <hr class="divider" />
-            <div class="col-md-5 offset-md-4">
-                <div class="form-group">
-                    <label for="txtidentificacion">Identificación</label>
-                    <asp:TextBox ID="txtidentificacion" runat="server" CssClass="form-control" MaxLength="11" Placeholder="Escriba su identificación" Required="true" pattern="[0-9]{1}-[0-9]{4}-[0-9]{4}" />
-                    <small id="idHelp" class="form-text text-muted">El formato debe ser #-####-####</small>
-                </div>
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+        }
 
-                <div class="form-group">
-                    <label for="txtnombre">Nombre</label>
-                    <asp:TextBox  style="min-width: 200px;" ID="txtnombre" runat="server" CssClass="form-control" MaxLength="20" Placeholder="Escriba su nombre" Required="true" />
-                </div>
+        .form-label {
+            margin-bottom: 5px;
+        }
 
-                <div class="form-group">
-                    <label for="txtapellidos">Apellidos</label>
-                    <asp:TextBox ID="txtapellidos" runat="server" CssClass="form-control" MaxLength="50" Placeholder="Escriba sus apellidos" Required="true" />
-                </div>
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
 
-                <div class="form-group">
-                    <label for="txtcorreo">Correo Electrónico</label>
-                    <asp:TextBox ID="txtcorreo" runat="server" CssClass="form-control" Placeholder="alguien@ejemplo.com" Required="true" />
-                </div>
+        .inputfile {
+            display: none;
+        }
 
-                <div class="form-group">
-                    <label for="txtcontrasena">Contraseña</label>
-                    <asp:TextBox ID="txtcontrasena" runat="server" CssClass="form-control" TextMode="Password" Placeholder="Contraseña" MinLength="10" Required="true" onkeyup="validarContrasena()" />
-                    <small id="proHelp" class="form-text text-muted">Tamaño mínimo 10 caracteres, debe incluir al menos una mayúscula y al menos un número y números no consecutivos como (11111 o 22222)</small>
-                    <div>
-                        <span id="mensaje" style="color: red;"></span>
-                    </div>
-                </div>
+        /* Estilos para el contenedor personalizado */
+        .custom-file-upload {
+            position: relative;
+        }
 
-                <div class="form-group mt-4 mb-4">
-                    <asp:Button ID="btnRegistrar" runat="server" Text="Registrarme" CssClass="btn btn-primary" Enable="false" Style="background-color: blue;" />
-                </div>
+            /* Estilos para el botón personalizado */
+            .custom-file-upload label {
+                background-color: #7AB730;
+                color: #fff;
+                padding: 10px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+        /* Estilos para el texto del nombre del archivo seleccionado */
+        #selectedFileName {
+            margin-top: 5px;
+            display: block;
+            font-style: italic;
+        }
+
+        body {
+            background-color: #f9f9f9;
+        }
+    </style>
+
+    <div class="container">
+    <div class="row col-lg-12 col-sm-12 text-center">
+        <h1 style="color: #1a2954;">Crear Cuenta</h1>
+    </div>
+</div>
+
+<div class="container con">
+    <div class="row col-lg-12 col-sm-12 text-center">
+
+        <div class="col-sm-12 col-lg-6 mt-2 form-group">
+            <asp:Label ID="lblNombre" runat="server" AssociatedControlID="txtNombre" CssClass="form-label">Nombre</asp:Label>
+            <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" AutoComplete="off" placeholder="Nombre"></asp:TextBox>
+        </div>
+        <div class="col-sm-12 col-lg-6 mt-2 form-group">
+            <asp:Label ID="lblCorreoElectronico" runat="server" AssociatedControlID="txtCorreoElectronico" CssClass="form-label">Correo Electrónico</asp:Label>
+            <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="form-control" AutoComplete="off" placeholder="alguien@ejemplo.com"></asp:TextBox>
+        </div>
+        <div class="col-sm-6 col-lg-6 mt-2 form-group">
+            <asp:Label ID="lblRol" runat="server" AssociatedControlID="ddlRol" CssClass="form-label">Rol</asp:Label>
+            <asp:DropDownList ID="ddlRol" runat="server" CssClass="form-select" aria-label="Default select example">
+                <asp:ListItem Value="Anfitrión">Anfitrión</asp:ListItem>
+                <asp:ListItem Value="Huésped">Huésped</asp:ListItem>
+            </asp:DropDownList>
+        </div>
+        <div class="col-sm-6 col-lg-6 mt-2 form-group">
+            <asp:Label ID="lblIdentificacion" runat="server" AssociatedControlID="txtIdentificacion" CssClass="form-label">Identificación</asp:Label>
+            <asp:TextBox ID="txtIdentificacion" runat="server" CssClass="form-control" MaxLength="11" aria-describedby="idHelp"
+                pattern="[0-9]{1}-[0-9]{4}-[0-9]{4}" placeholder="1-1111-1111" required="true"></asp:TextBox>
+            <small id="idHelpIdentificacion" class="form-text text-muted">El formato debe ser #-####-####</small>
+        </div>
+        <div class="col-sm-6 col-lg-6 mt-2 form-group">
+            <asp:Label ID="lblApellidos" runat="server" AssociatedControlID="txtApellidos" CssClass="form-label">Apellidos</asp:Label>
+            <asp:TextBox ID="txtApellidos" runat="server" CssClass="form-control" AutoComplete="off" placeholder="Apellidos"></asp:TextBox>
+        </div>
+        <div class="col-sm-6 col-lg-6 mt-2 form-group">
+            <asp:Label ID="lblContrasenaCrear" runat="server" AssociatedControlID="txtcontrasenaCrear" CssClass="form-label">Contraseña</asp:Label>
+            <asp:TextBox ID="txtcontrasenaCrear" runat="server" TextMode="Password" CssClass="form-control" placeholder="Contraseña"
+                MinLength="10" OnKeyUp="validarContrasena()" required="true"></asp:TextBox>
+            <div>
+                <span class="mensaje" style="color: red;"></span>
             </div>
         </div>
+        
+
+        <div class="col-sm-12 mt-12">
+            <asp:Button disabled="true" ID="btnCrearCuenta" runat="server" Text="Crear Cuenta" CssClass="btn btn-primary btn-block"
+                Style="height: 47px; margin-top: -2px; background: #1a2954; border-color: #1a2954;"  />
+        </div>
     </div>
+</div>
+
+    
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

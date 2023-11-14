@@ -25,7 +25,7 @@
     <div class="d-flex align-items-center justify-content-center" style="min-height: 10rem;">
 
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <h1>Información de la cuenta</h1>
+            <h1 style="color: #f58809;">Información de la cuenta</h1>
             <div class="row">
                 <label for="lblCuenta">Número de cuenta:</label>
                 <label id="lblCuenta" class="form-control">##################</label>
@@ -42,8 +42,8 @@
             </div>
 
             <div class="row mt-2 mb-2">
-                <button class="btn btn-primary" onclick="prepararEdicion(); return false;" style="background-color: blue;">
-                    <i class="fa-solid fa-plus" style="color: white; margin-right: 2px;"></i>Agregar Fondos
+                <button class="btn btn-primary" onclick="prepararEdicion(); return false;" style="background-color: #1a2954; border-color:#1a2954; ">
+                    <i class="fa-solid fa-plus" style="color: white; margin-right: 2px; background-color: #1a2954;"></i>Agregar Fondos
                 </button>
             </div>
 
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="row" style="margin-top: 5px; margin-top: 10px;">
-                        <asp:Button ID="Button1" runat="server" Text="Cargar Fondos" CssClass="btn btn-primary me-2" />
+                        <asp:Button ID="Button1" runat="server" Text="Cargar Fondos" style="background-color: #1a2954; border-color: #1a2954;" CssClass="btn btn-primary me-2" />
                     </div>
                     <div class="row" style="margin-top: 5px; margin-top: 10px;">
                         <button type="button" onclick="ocultarSeccionEdicion()" class="btn btn-secondary">Cancelar</button>

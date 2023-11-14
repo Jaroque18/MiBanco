@@ -125,6 +125,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="img\logo.JPG" />
     <Content Include="pages\anfitrion.aspx" />
     <Content Include="pages\anfitriontransacciones.aspx" />
     <Content Include="pages\huesped.aspx" />

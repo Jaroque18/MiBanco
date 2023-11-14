@@ -21,7 +21,7 @@
     <div class="d-flex align-items-center justify-content-center" style="min-height: 10rem;">
 
         <div class="col-lg-4 col-md-4 col-sm-4">
-            <h1>Información de la cuenta</h1>
+            <h1 style="color:#f58809;">Información de la cuenta</h1>
             <div class="row">
                 <label for="lblCuenta">Número de cuenta:</label>
                 <label id="lblCuenta" class="form-control">##################</label>
@@ -45,7 +45,7 @@
 
 
             <div class="row mt-2 mb-2">
-                <button class="btn btn-primary" style="background-color: blue;">Ver Transacciones</button>
+                <button class="btn btn-primary" style="background-color: #1a2954; border-color: #1a2954; ">Ver Transacciones</button>
             </div>
 
 
