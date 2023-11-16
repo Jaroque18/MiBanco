@@ -32,7 +32,16 @@ namespace MiBanco.pages
                 lblCuenta.Text = dtdatos.Rows[0]["TarjetaCredito"].ToString();
                 lblCVV.Text = dtdatos.Rows[0]["CVV"].ToString();
                 lblSaldo.Text = "$ "+dtdatos.Rows[0]["SaldoDisponible"].ToString();
-                Label1.Text = eUsuario.Nombre.ToString() +" "+eUsuario.Apellidos.ToString()+" / Anfitrión";
+
+                if(eUsuario.T_Rol == 'G')
+                {
+                    Label1.Text = eUsuario.Nombre.ToString() + " " + eUsuario.Apellidos.ToString() + " / Gestor Principal";
+                }
+                else
+                {
+                    Label1.Text = eUsuario.Nombre.ToString() + " " + eUsuario.Apellidos.ToString() + " / Anfitrión";
+                }
+                
 
             }
 

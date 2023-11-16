@@ -126,6 +126,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="img\logo.JPG" />
+    <Content Include="mibanco.asmx" />
     <Content Include="pages\anfitrion.aspx" />
     <Content Include="pages\anfitriontransacciones.aspx" />
     <Content Include="pages\huesped.aspx" />
@@ -217,6 +218,10 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="mibanco.asmx.cs">
+      <DependentUpon>mibanco.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="pages\anfitrion.aspx.cs">
       <DependentUpon>anfitrion.aspx</DependentUpon>
