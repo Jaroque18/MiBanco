@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,27 @@ namespace MiBanco.pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Entidades.Usuarios eUsuario = Session["usuario"] as Entidades.Usuarios;
 
+            if (eUsuario == null)
+            {
+                Response.Redirect("/Default.aspx");
+            }
+
+            if (!IsPostBack & eUsuario != null)
+            {
+                Negocios.Negocio_Usuarios usuario = new Negocios.Negocio_Usuarios();
+
+                rptDatosUsuarios.DataSource = usuario.listarTransacciones(eUsuario.Correo);
+                rptDatosUsuarios.DataBind();
+            }
+
+        }
+
+        protected void btnRegresar_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("../pages/anfitrion.aspx");
         }
     }
 }

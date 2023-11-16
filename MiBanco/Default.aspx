@@ -97,7 +97,7 @@
 
             <div class="col-sm-12 col-lg-12 mt-2 form-group">
                 <asp:Button ID="btnIniciarSesion" runat="server" Text="Iniciar Sesión" CssClass="btn btn-primary btn-block"
-                    Style="height: 44px; margin-top: -2px; background: #f58809; border-color: #f58809;"  />
+                    Style="height: 44px; margin-top: -2px; background: #f58809; border-color: #f58809;" OnClick="btnIniciarSesion_Click"  />
             </div>
 
             <div class="col-sm-12 col-lg-12 mt-2 form-group">

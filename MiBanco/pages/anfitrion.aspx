@@ -22,30 +22,32 @@
 
         <div class="col-lg-4 col-md-4 col-sm-4">
             <h1 style="color:#f58809;">Información de la cuenta</h1>
+            <asp:Label id="Label1" runat="server" Text="" style="color:  #1a2954; font-size: 25px;"></asp:Label>
             <div class="row">
-                <label for="lblCuenta">Número de cuenta:</label>
-                <label id="lblCuenta" class="form-control">##################</label>
+                <label for="lblCuenta" style="color:  #1a2954; font-size: 20px;">Número de cuenta:</label>
+                <asp:Label id="lblCuenta" runat="server" Text="" class="form-control"></asp:Label>
             </div>
 
 
 
 
             <div class="row">
-                <label for="lblCVV">CVV:</label>
-                <label id="lblCVV" class="form-control">###</label>
+                <label for="lblCVV" style="color:  #1a2954; font-size: 20px;">CVV:</label>
+               <asp:Label id="lblCVV" runat="server" class="form-control">###</asp:Label>
             </div>
 
 
 
             <div class="row">
-                <label for="lblSaldo">Saldo disponible:</label>
-                <label id="lblSaldo" class="form-control">###</label>
+                <label for="lblSaldo" style="color:  #1a2954; font-size: 20px;">Saldo disponible:</label>
+                <asp:Label id="lblSaldo" runat="server" class="form-control">###</asp:Label>
             </div>
 
 
 
             <div class="row mt-2 mb-2">
-                <button class="btn btn-primary" style="background-color: #1a2954; border-color: #1a2954; ">Ver Transacciones</button>
+                <asp:Button ID="btnVerTransacciones" runat="server" Text="Ver Transacciones" CssClass="btn btn-primary" style="background-color:  #1a2954 !important; border-color:  #1a2954 !important;" OnClick="btnVerTransacciones_Click" />
+
             </div>
 
 

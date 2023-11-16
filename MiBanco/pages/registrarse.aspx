@@ -159,7 +159,7 @@
 
         <div class="col-sm-12 mt-12">
             <asp:Button disabled="true" ID="btnCrearCuenta" runat="server" Text="Crear Cuenta" CssClass="btn btn-primary btn-block"
-                Style="height: 47px; margin-top: -2px; background: #1a2954; border-color: #1a2954;"  />
+                Style="height: 47px; margin-top: -2px; background: #1a2954; border-color: #1a2954;" OnClick="btnCrearCuenta_Click"  />
         </div>
     </div>
 </div>
