@@ -53,7 +53,7 @@ namespace MiBanco.pages
                 string script = "Swal.fire('¡GRACIAS!', 'Su cuenta se creo de manera satisfactoria.', 'success');";
                 ScriptManager.RegisterStartupScript(this, GetType(), "MostrarAlerta", script, true);
 
-                string redirectScript = "setTimeout(function(){window.location.href = '/Default.aspx';}, 5000);";
+                string redirectScript = "setTimeout(function(){window.location.href = '../Default.aspx';}, 5000);";
                 ScriptManager.RegisterStartupScript(this, GetType(), "Redirigir", redirectScript, true);
 
             } catch (Exception ) {

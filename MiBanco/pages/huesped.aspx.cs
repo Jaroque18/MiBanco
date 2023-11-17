@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -18,7 +19,7 @@ namespace MiBanco.pages
 
             if (eUsuario == null)
             {
-                Response.Redirect("/Default.aspx");
+                FormsAuthentication.RedirectToLoginPage();
             }
 
             if (!IsPostBack & eUsuario != null)
@@ -50,6 +51,7 @@ namespace MiBanco.pages
 
             string script = "Swal.fire('¡GRACIAS!', 'Su saldo se acreditó de manera correcta.', 'success');";
             ScriptManager.RegisterStartupScript(this, GetType(), "MostrarAlerta", script, true);
+
             string redirectScript = "setTimeout(function(){window.location.href = '../pages/huesped.aspx';}, 3000);";
             ScriptManager.RegisterStartupScript(this, GetType(), "Redirigir", redirectScript, true);
         }

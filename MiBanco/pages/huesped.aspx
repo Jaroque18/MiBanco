@@ -26,24 +26,24 @@
 
         <div class="col-lg-4 col-md-4 col-sm-4">
             <h1 style="color: #f58809;">Información de la cuenta</h1>
-            <asp:Label id="Label1" runat="server" Text="" style="color:  #1a2954; font-size: 25px;"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="" Style="color: #1a2954; font-size: 25px;"></asp:Label>
             <div class="row">
-                <label for="lblCuenta" style="color:  #1a2954; font-size: 20px;">Número de cuenta:</label>
-                <asp:Label id="lblCuenta" runat="server" Text="" class="form-control"></asp:Label>
+                <label for="lblCuenta" style="color: #1a2954; font-size: 20px;">Número de cuenta:</label>
+                <asp:Label ID="lblCuenta" runat="server" Text="" class="form-control"></asp:Label>
             </div>
 
             <div class="row">
-                <label for="lblCVV" style="color:  #1a2954; font-size: 20px;">CVV:</label>
-               <asp:Label id="lblCVV" runat="server" class="form-control">###</asp:Label>
+                <label for="lblCVV" style="color: #1a2954; font-size: 20px;">CVV:</label>
+                <asp:Label ID="lblCVV" runat="server" class="form-control">###</asp:Label>
             </div>
-
-            <div class="row">
-                <label for="lblSaldo" style="color:  #1a2954; font-size: 20px;">Saldo disponible:</label>
-                <asp:Label id="lblSaldo" runat="server" class="form-control">###</asp:Label>
-            </div>
-
+            
+                    <div class="row">
+                        <label for="lblSaldo" style="color: #1a2954; font-size: 20px;">Saldo disponible:</label>
+                        <asp:Label ID="lblSaldo" runat="server" class="form-control">###</asp:Label>
+                    </div>
+                
             <div class="row mt-2 mb-2">
-                <button class="btn btn-primary" onclick="prepararEdicion(); return false;" style="background-color: #1a2954; border-color:#1a2954; ">
+                <button class="btn btn-primary" onclick="prepararEdicion(); return false;" style="background-color: #1a2954; border-color: #1a2954;">
                     <i class="fa-solid fa-plus" style="color: white; margin-right: 2px; background-color: #1a2954;"></i>Agregar Fondos
                 </button>
             </div>
@@ -56,11 +56,11 @@
                     <div class="row justify-content-center">
                         <asp:HiddenField ID="hiddenField1" runat="server" />
                         <asp:Label ID="lblNombre" runat="server" AssociatedControlID="txtFondos" CssClass="form-label">Fondos a agregar:</asp:Label>
-                        <asp:TextBox runat="server" type="number" CssClass="form-control" ID="txtFondos" ></asp:TextBox>
+                        <asp:TextBox runat="server" type="number" CssClass="form-control" ID="txtFondos"></asp:TextBox>
                     </div>
 
                     <div class="row" style="margin-top: 5px; margin-top: 10px;">
-                        <asp:Button ID="Button1" onclick="Button1_Click" runat="server" Text="Cargar Fondos" style="background-color: #1a2954; border-color: #1a2954;" CssClass="btn btn-primary me-2" />
+                        <asp:Button ID="Button1" OnClick="Button1_Click" runat="server" Text="Cargar Fondos" Style="background-color: #1a2954; border-color: #1a2954;" CssClass="btn btn-primary me-2" />
                     </div>
                     <div class="row" style="margin-top: 5px; margin-top: 10px;">
                         <button type="button" onclick="ocultarSeccionEdicion()" class="btn btn-secondary">Cancelar</button>
