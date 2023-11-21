@@ -101,5 +101,26 @@ namespace Negocios
             return dt;
 
         }
+
+        public string ObtenerTipoCambio()
+        {
+            DateTime fechaActual = DateTime.Now;
+            string fechaComoString = fechaActual.ToString("dd/MM/yyyy"); 
+
+            BancoBCCR.wsindicadoreseconomicos client = new BancoBCCR.wsindicadoreseconomicos();
+            
+            DataSet dataSet = client.ObtenerIndicadoresEconomicos("318", fechaComoString, fechaComoString, "José Julián Rodríguez Mora", "Si", "305400698@cuc.cr", "UOPJR3O645");
+
+            if (dataSet != null && dataSet.Tables.Count > 0 && dataSet.Tables["INGC011_CAT_INDICADORECONOMIC"].Rows.Count > 0)
+            {
+                DataRow row = dataSet.Tables["INGC011_CAT_INDICADORECONOMIC"].Rows[0];
+                string numValor = row["NUM_VALOR"].ToString();
+                return numValor;
+            }
+            else
+            {
+                return "No se encontró el valor";
+            }
+        }
     }
 }
