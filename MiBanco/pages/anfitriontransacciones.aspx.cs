@@ -33,7 +33,7 @@ namespace MiBanco.pages
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
 
-            Response.Redirect("../pages/anfitrion.aspx");
+            Response.Redirect("../pages/huesped.aspx");
         }
     }
 }

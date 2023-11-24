@@ -36,16 +36,20 @@
                 <label for="lblCVV" style="color: #1a2954; font-size: 20px;">CVV:</label>
                 <asp:Label ID="lblCVV" runat="server" class="form-control">###</asp:Label>
             </div>
-            
-                    <div class="row">
-                        <label for="lblSaldo" style="color: #1a2954; font-size: 20px;">Saldo disponible:</label>
-                        <asp:Label ID="lblSaldo" runat="server" class="form-control">###</asp:Label>
-                    </div>
-                
+
+            <div class="row">
+                <label for="lblSaldo" style="color: #1a2954; font-size: 20px;">Saldo disponible:</label>
+                <asp:Label ID="lblSaldo" runat="server" class="form-control">###</asp:Label>
+            </div>
+
             <div class="row mt-2 mb-2">
                 <button class="btn btn-primary" onclick="prepararEdicion(); return false;" style="background-color: #1a2954; border-color: #1a2954;">
                     <i class="fa-solid fa-plus" style="color: white; margin-right: 2px; background-color: #1a2954;"></i>Agregar Fondos
                 </button>
+            </div>
+            <div class="row mt-2 mb-2">
+                <asp:Button ID="btnVerTransacciones" runat="server" Text="Ver Transacciones" CssClass="btn btn-primary" Style="background-color: #1a2954 !important; border-color: #1a2954 !important;" OnClick="btnVerTransacciones_Click" />
+
             </div>
 
             <div class="row mt-2 mb-2">

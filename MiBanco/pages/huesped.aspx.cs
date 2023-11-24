@@ -34,7 +34,7 @@ namespace MiBanco.pages
                 lblCuenta.Text = dtdatos.Rows[0]["TarjetaCredito"].ToString();
                 lblCVV.Text = dtdatos.Rows[0]["CVV"].ToString();
                 lblSaldo.Text = "$ "+dtdatos.Rows[0]["SaldoDisponible"].ToString();
-                Label1.Text = eUsuario.Nombre.ToString() + " " + eUsuario.Apellidos.ToString() + " / Huésped";
+                Label1.Text = "Usuario: "+eUsuario.Nombre.ToString() + " " + eUsuario.Apellidos.ToString();
 
             }
         }
@@ -54,6 +54,11 @@ namespace MiBanco.pages
 
             string redirectScript = "setTimeout(function(){window.location.href = '../pages/huesped.aspx';}, 3000);";
             ScriptManager.RegisterStartupScript(this, GetType(), "Redirigir", redirectScript, true);
+        }
+
+        protected void btnVerTransacciones_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../pages/anfitriontransacciones.aspx");
         }
     }
 }
