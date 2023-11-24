@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
+    <title><%: Page.Title %> - MiBanco</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -62,24 +62,34 @@
 
         <nav class="navbar navbar-expand-lg p-3 custom-navbar">
             <div class="container-fluid">
+                <!-- Logo -->
                 <div class="logo">
-    <img src="<%= ResolveUrl("~/img/logo.JPG") %>" class="logo img-fluid" alt="Logo de la marca" style="max-height: 40px" />
-</div>
+                    <img src="<%= ResolveUrl("~/img/logo.JPG") %>" class="logo img-fluid" alt="Logo de la marca" style="max-height: 40px" />
+                </div>
+
+                <!-- Botón de Hamburguesa para pantallas pequeñas -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: white; background-color: white;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Elementos de la barra de navegación -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item mr-2" style="margin-right: 5px;">
+                        <li class="nav-item mr-2" style="margin-right: 5px; margin-top: 4px;">
                             <asp:LinkButton runat="server" ID="CerrarSesion" OnClick="CerrarSesion_Click" Visible="false" class="btn btn-warning navbar-custom-bg">Cerrar Sesión</asp:LinkButton>
                         </li>
-                        <li class="nav-item mr-2" style="margin-right: 5px;">
+                        <li class="nav-item mr-2" style="margin-right: 5px;margin-top: 4px;">
                             <a runat="server" id="Login" href="pages/login.aspx" class="btn btn-warning navbar-custom-bg">Iniciar Sesión</a>
                         </li>
-                        <li class="nav-item mr-2" style="margin-right: 5px;">
+                        <li class="nav-item mr-2" style="margin-right: 5px;margin-top: 4px;">
                             <a runat="server" id="Registrarse" href="pages/registrarse.aspx" class="btn btn-warning navbar-custom-bg">Registrarse</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

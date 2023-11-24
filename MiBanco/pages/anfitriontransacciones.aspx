@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <div class="d-flex align-items-center justify-content-center" style="min-height: 20rem;">
-
+    <div class="container my-3">
+    <div class="container mt-5">
         <div class="col-lg-9 col-md-12 col-sm-12">
             <h1 style="color: #f58809; margin-bottom: 5px;">Sus transacciones</h1>
             <div class="row">
@@ -45,4 +45,5 @@
             </div>
         </div>
     </div>
+        </div>
 </asp:Content>
