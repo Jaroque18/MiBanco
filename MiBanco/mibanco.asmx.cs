@@ -28,7 +28,7 @@ namespace MiBanco
 
 
         [WebMethod]
-        public bool ValidarExistencia(string numTarjeta, string cvv, string t_rol)
+        public bool ValidarExistencia(string numTarjeta, string cvv, string identificacion)
         {
             bool encontrado = false;
 
@@ -41,7 +41,7 @@ namespace MiBanco
                 List<SqlParameter> lstParametros = new List<SqlParameter>();
                 lstParametros.Add(new SqlParameter("@numTarjeta", numTarjeta));
                 lstParametros.Add(new SqlParameter("@cvv", cvv));
-                lstParametros.Add(new SqlParameter("@trol", t_rol));
+                lstParametros.Add(new SqlParameter("@identificacion", identificacion));
                 dt = Datos.ConexionSQL.ExecuteQueryTable(strNombreSP, lstParametros);
 
             }
