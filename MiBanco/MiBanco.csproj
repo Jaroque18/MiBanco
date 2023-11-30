@@ -165,7 +165,6 @@
     <Content Include="img\logo.JPG" />
     <Content Include="img\miBanco.jpeg" />
     <Content Include="mibanco.asmx" />
-    <Content Include="pages\anfitrion.aspx" />
     <Content Include="pages\anfitriontransacciones.aspx" />
     <Content Include="pages\huesped.aspx" />
     <Content Include="pages\login.aspx" />
@@ -233,7 +232,6 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
-    <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -265,13 +263,6 @@
     <Compile Include="mibanco.asmx.cs">
       <DependentUpon>mibanco.asmx</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="pages\anfitrion.aspx.cs">
-      <DependentUpon>anfitrion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="pages\anfitrion.aspx.designer.cs">
-      <DependentUpon>anfitrion.aspx</DependentUpon>
     </Compile>
     <Compile Include="pages\anfitriontransacciones.aspx.cs">
       <DependentUpon>anfitriontransacciones.aspx</DependentUpon>
@@ -313,13 +304,6 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

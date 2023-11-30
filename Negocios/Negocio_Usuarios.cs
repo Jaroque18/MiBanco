@@ -22,7 +22,6 @@ namespace Negocios
                 lstParametros.Add(new SqlParameter("@Identificacion", Usuario.IdUsuario));
                 lstParametros.Add(new SqlParameter("@Nombre", Usuario.Nombre));
                 lstParametros.Add(new SqlParameter("@Apellidos", Usuario.Apellidos));
-                lstParametros.Add(new SqlParameter("@RolUsuario", Usuario.T_Rol));
                 lstParametros.Add(new SqlParameter("@Correo", Usuario.Correo));
                 lstParametros.Add(new SqlParameter("@Contrasena", Usuario.Contrasena));
 

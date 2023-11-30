@@ -19,9 +19,8 @@ namespace MiBanco.pages
         protected void btnCrearCuenta_Click(object sender, EventArgs e)
         {
             try {
-                char tRol = 'a';
+ 
                 String Nombre = txtNombre.Text;
-                String Rol = ddlRol.SelectedValue.ToString();
                 String Apellidos = txtApellidos.Text;
                 String CorreoElectronico = txtCorreoElectronico.Text;
                 String Identificacion = txtIdentificacion.Text;
@@ -30,16 +29,6 @@ namespace MiBanco.pages
                 Entidades.Usuarios iUsuario = new Entidades.Usuarios();
 
                 iUsuario.Nombre = Nombre;
-                if (Rol.Equals("Anfitrión"))
-                {
-                    tRol = 'A';
-                }
-                if (Rol.Equals("Huésped"))
-                {
-                    tRol = 'H';
-                }
-
-                iUsuario.T_Rol = tRol;
                 iUsuario.Apellidos = Apellidos;
                 iUsuario.Correo = CorreoElectronico;
                 iUsuario.IdUsuario = Identificacion;

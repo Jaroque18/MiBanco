@@ -131,13 +131,6 @@
             <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="form-control" AutoComplete="off" placeholder="alguien@ejemplo.com"></asp:TextBox>
         </div>
         <div class="col-sm-6 col-lg-6 mt-2 form-group">
-            <asp:Label ID="lblRol" runat="server" AssociatedControlID="ddlRol" CssClass="form-label">Rol</asp:Label>
-            <asp:DropDownList ID="ddlRol" runat="server" CssClass="form-select" aria-label="Default select example">
-                <asp:ListItem Value="Anfitrión">Anfitrión</asp:ListItem>
-                <asp:ListItem Value="Huésped">Huésped</asp:ListItem>
-            </asp:DropDownList>
-        </div>
-        <div class="col-sm-6 col-lg-6 mt-2 form-group">
             <asp:Label ID="lblIdentificacion" runat="server" AssociatedControlID="txtIdentificacion" CssClass="form-label">Identificación</asp:Label>
             <asp:TextBox ID="txtIdentificacion" runat="server" CssClass="form-control" MaxLength="11" aria-describedby="idHelp"
                 pattern="[0-9]{1}-[0-9]{4}-[0-9]{4}" placeholder="1-1111-1111" required="true"></asp:TextBox>

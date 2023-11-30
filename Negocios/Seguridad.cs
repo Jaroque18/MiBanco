@@ -33,10 +33,9 @@ namespace Negocios
                 iUsuario.IdUsuario = dt.Rows[0][0].ToString();
                 iUsuario.CVV = dt.Rows[0][2].ToString();   
                 iUsuario.Tarjeta = dt.Rows[0][3].ToString();
-                string rol = dt.Rows[0][4].ToString();
-                iUsuario.T_Rol = rol[0];
-                iUsuario.Nombre = dt.Rows[0][5].ToString();
-                iUsuario.Apellidos = dt.Rows[0][6].ToString();
+                
+                iUsuario.Nombre = dt.Rows[0][4].ToString();
+                iUsuario.Apellidos = dt.Rows[0][5].ToString();
                
 
             }

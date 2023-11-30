@@ -21,20 +21,9 @@ namespace MiBanco.pages
 
             if (eUsuario != null)
             {
-                if (eUsuario.T_Rol == 'A')
-                {
-                    Response.Redirect("../pages/anfitrion.aspx");
-                }
-
-                if (eUsuario.T_Rol == 'H')
-                {
+               
                     Response.Redirect("../pages/huesped.aspx");
-                }
-
-                if (eUsuario.T_Rol == 'G')
-                {
-                    Response.Redirect("../pages/anfitrion.aspx");
-                }
+   
             }
         }
 
@@ -63,20 +52,9 @@ namespace MiBanco.pages
 
                     FormsAuthentication.RedirectFromLoginPage(correo, false);
 
-                    if (eUsuario.T_Rol == 'A')
-                    {
-                        Response.Redirect("../pages/anfitrion.aspx");
-                    }
-
-                    if (eUsuario.T_Rol == 'H')
-                    {
+                    
                         Response.Redirect("../pages/huesped.aspx");
-                    }
 
-                    if (eUsuario.T_Rol == 'G')
-                    {
-                        Response.Redirect("../pages/anfitrion.aspx");
-                    }
                 }
                 else
                 {
