@@ -104,5 +104,40 @@ namespace MiBanco
             return datos;
 
         }
+
+
+        [WebMethod]
+        public bool ValidarPago(int Opcion, float TotalRebajar, string IdHuesped, string IdAnfitrion, float SubTotal, float TotalTravelNest)
+        {
+            bool datos = false;
+            
+
+            try
+            {
+                string strNombreSP = "ValdiarTransacciones";
+
+                List<SqlParameter> lstParametros = new List<SqlParameter>();
+                lstParametros.Add(new SqlParameter("@Opcion", Opcion));
+                lstParametros.Add(new SqlParameter("@TotalRebajar", TotalRebajar));
+                lstParametros.Add(new SqlParameter("@IdUsuarioHuesped", IdHuesped));
+                lstParametros.Add(new SqlParameter("@IdUsuarioAnfitrion", IdAnfitrion));
+                lstParametros.Add(new SqlParameter("@Subtotal", SubTotal));
+                lstParametros.Add(new SqlParameter("@TotalTravelNest", TotalTravelNest));
+
+                
+                Datos.ConexionSQL.ExecuteQuery(strNombreSP, lstParametros);
+
+
+                datos = true;
+
+            }
+            catch (Exception)
+            {
+                datos = false;
+            }
+
+            return datos;
+
+        }
     }
 }
